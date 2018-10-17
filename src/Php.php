@@ -42,7 +42,7 @@ class Xapp_Config_Php extends Xapp_Config
                     $php = array_slice(get_defined_vars(), 1);
                 }
             }else{
-                throw new Xapp_Config_Exception(xapp_sprintf(_("unable to load php config file: %s"), $php), 1270101);
+                throw new Xapp_Config_Exception(xapp_sprintf(__("unable to load php config file: %s"), $php), 1270101);
             }
         }
         return (array)$php;

@@ -36,7 +36,7 @@ class Xapp_Config_Ini extends Xapp_Config
         {
             return (array)$ini;
         }else{
-            throw new Xapp_Config_Exception(_("unable to load ini config"), 1250101);
+            throw new Xapp_Config_Exception(__("unable to load ini config"), 1250101);
         }
     }
 }

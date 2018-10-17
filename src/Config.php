@@ -134,7 +134,7 @@ abstract class Xapp_Config implements Xapp_Config_Interface
                 return self::$_instances[$ns];
             }
         }else{
-            throw new Xapp_Config_Exception(xapp_sprintf(_("config class: %s does not exist"), $class), 1240201);
+            throw new Xapp_Config_Exception(xapp_sprintf(__("config class: %s does not exist"), $class), 1240201);
         }
     }
 
@@ -172,7 +172,7 @@ abstract class Xapp_Config implements Xapp_Config_Interface
         }else if((bool)@parse_ini_string($mixed)){
             return 'ini';
         }else{
-            throw new Xapp_Config_Exception(_("unable to determine config type for passed value"), 1240301);
+            throw new Xapp_Config_Exception(__("unable to determine config type for passed value"), 1240301);
         }
     }
 

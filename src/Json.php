@@ -36,12 +36,12 @@ class Xapp_Config_Json extends Xapp_Config
                 $json = json_decode(self::clean(file_get_contents($json)), true);
                 if($json !== false && $json !== null)
                 {
-                    throw new Xapp_Config_Exception(xapp_sprintf(_("unable to load and decode json from: %s"), $json), 1260102);
+                    throw new Xapp_Config_Exception(xapp_sprintf(__("unable to load and decode json from: %s"), $json), 1260102);
                 }else{
                     return $json;
                 }
             }else{
-                throw new Xapp_Config_Exception(xapp_sprintf(_("passed json file: %s is neither json string not json file pointer"), $json), 1260101);
+                throw new Xapp_Config_Exception(xapp_sprintf(__("passed json file: %s is neither json string not json file pointer"), $json), 1260101);
             }
         }
     }

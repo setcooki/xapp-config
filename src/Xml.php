@@ -30,19 +30,19 @@ class Xapp_Config_Xml extends Xapp_Config
         {
             if(is_file($xml) && ($xml = simplexml_load_file($xml, 'SimpleXMLElement', LIBXML_NOBLANKS | LIBXML_NOCDATA)) === false)
             {
-                throw new Xapp_Config_Exception(xapp_sprintf(_("unable to load xml config from file: %s, error: %s"), $xml, libxml_get_last_error()), 1280101);
+                throw new Xapp_Config_Exception(xapp_sprintf(__("unable to load xml config from file: %s, error: %s"), $xml, libxml_get_last_error()), 1280101);
             }
         }else{
             if(($xml = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOBLANKS | LIBXML_NOCDATA)) === false)
             {
-                throw new Xapp_Config_Exception(xapp_sprintf(_("unable to load xml config from string, error: %s"), libxml_get_last_error()), 1280102);
+                throw new Xapp_Config_Exception(xapp_sprintf(__("unable to load xml config from string, error: %s"), libxml_get_last_error()), 1280102);
             }
         }
         if(($json = json_encode($xml)) !== false)
         {
             return json_decode($json, true);
         }else{
-            throw new Xapp_Config_Exception(xapp_sprintf(_("unable to parse xml config: %s"), json_last_error()), 1280103);
+            throw new Xapp_Config_Exception(xapp_sprintf(__("unable to parse xml config: %s"), json_last_error()), 1280103);
         }
     }
 }
